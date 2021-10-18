@@ -1,0 +1,21 @@
+.button {
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.button:focus,
+.button:hover {
+  background-color: rgba(133, 76, 187, 0.788);
+  box-shadow: 2px 2px 5px 0px #000000;
+  color: white;
+}
+
+.button:not(:first-child) {
+  margin-left: 10px;
+}

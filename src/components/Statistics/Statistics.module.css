@@ -1,0 +1,12 @@
+.text {
+  font-size: 18px;
+}
+
+.span {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.text:not(:last-child) {
+  margin-bottom: 10px;
+}
