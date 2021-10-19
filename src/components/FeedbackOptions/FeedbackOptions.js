@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
 function FeedbackOptions({ buttonNames, onLeaveFeedback }) {
+  const buttons = Object.keys(buttonNames);
   return (
     <div>
-      {buttonNames.map(button => (
+      {buttons.map(button => (
         <button
           className={s.button}
           key={shortid.generate()}
@@ -21,7 +22,7 @@ function FeedbackOptions({ buttonNames, onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  buttonNames: PropTypes.array.isRequired,
+  buttonNames: PropTypes.object.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 

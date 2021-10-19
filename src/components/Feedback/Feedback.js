@@ -9,6 +9,7 @@ export default function Feedback() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const buttonNames = { good, neutral, bad };
 
   const useOnLeaveFeedback = button => {
     switch (button) {
@@ -41,7 +42,7 @@ export default function Feedback() {
     <div className={s.box}>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          buttonNames={['good', 'neutral', 'bad']}
+          buttonNames={buttonNames}
           onLeaveFeedback={useOnLeaveFeedback}
         />
       </Section>
