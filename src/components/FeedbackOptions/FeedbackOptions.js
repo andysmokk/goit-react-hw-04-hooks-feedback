@@ -2,8 +2,7 @@ import shortid from 'shortid';
 import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
-function FeedbackOptions({ options, onLeaveFeedback }) {
-  const buttonNames = Object.keys(options);
+function FeedbackOptions({ buttonNames, onLeaveFeedback }) {
   return (
     <div>
       {buttonNames.map(button => (
@@ -11,7 +10,7 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
           className={s.button}
           key={shortid.generate()}
           name={button}
-          onClick={onLeaveFeedback}
+          onClick={() => onLeaveFeedback(button)}
           type="button"
         >
           {button}
@@ -22,7 +21,7 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.objectOf(PropTypes.number.isRequired),
+  buttonNames: PropTypes.array.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 
